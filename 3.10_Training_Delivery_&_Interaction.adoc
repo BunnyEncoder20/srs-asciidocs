@@ -4,7 +4,7 @@
 |===
 | FR Codes | Context | Details
 
-.3+| *FR-LMS-08* +
+.5+| *FR-LMS-08* +
 *FR-LMS-10* +
 *FR-LMS-11*
 | *Description*
@@ -30,7 +30,7 @@ a|
    * Link registry for hot-linked multimedia and 3D learning objects.  
    * Repository access manager to retrieve content dynamically.
 
-// image::assets/lms_training_architecture.png[LMS Training Architecture, 400, align="center"]
+image::assets/lms_training_delivary_arch.png[LMS Training Architecture, 400, align="center"]
 
 | *Data Flow*
 a|
@@ -39,7 +39,7 @@ a|
 3. During live sessions, **hot links** activate embedded 3D animations/exploded diagrams for interactive visualization.  
 4. Repository fetches relevant materials with real-time access permissions.  
 
-// image::assets/lms_training_dataflow.png[LMS Training Data Flow, 300, align="center"]
+image::assets/lms_training_delivary_seq.png[LMS Training Data Flow, 300, align="center"]
 
 | *Implementation Methodology*
 a|
