@@ -4,7 +4,7 @@
 |===
 | FR Codes | Context | Details
 
-.2+| *FR-IETM-09* +
+.5+| *FR-IETM-09* +
 *FR-IETM-10*
 | *Description*
 a|
@@ -29,10 +29,10 @@ a|
 
 | *Implementation Methodology*
 a|
-* **Phase 1 – Browser Runtime Enablement:** Implement HTML5-based viewing with responsive layout.  
-* **Phase 2 – Notes Module Development:** Create annotation UI with contextual linking to DMs and media.  
-* **Phase 3 – Backend Persistence:** Implement DB schema per user and secure CRUD API endpoints.  
-* **Phase 4 – Session Integration:** Link notes to role-based login identity.  
-* **Phase 5 – Verification:** Validate access restrictions, offline usage, and performance.
+1. **Phase 1 – Browser Runtime Enablement:** Implement HTML5-based viewing with responsive layout.  
+2. **Phase 2 – Notes Module Development:** Create annotation UI with contextual linking to DMs and media.  
+3. **Phase 3 – Backend Persistence:** Implement DB schema per user and secure CRUD API endpoints.  
+4. **Phase 4 – Session Integration:** Link notes to role-based login identity.  
+5. **Phase 5 – Verification:** Validate access restrictions, offline usage, and performance.
 
 |===
