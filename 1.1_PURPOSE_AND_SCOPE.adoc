@@ -4,8 +4,7 @@
    design for two systems: an air-gapped, on-premises Interactive Electronic Technical
    Manual (IETM) Level 4 system, and a co-hosted Learning Management System (LMS).
 
-2. The design ensures full compliance with all requirements outlined in the Software
-   Requirements Specification (SRS) and the Request for Proposal (RFP).
+2. The design ensures full compliance with all requirements outlined in the Software Requirements Specification (SRS) and the Request for Proposal (RFP).
 
 3. It aligns with key international standards:
    * S1000D version 4.2 for structured technical documentation
