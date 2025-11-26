@@ -4,7 +4,7 @@
 |===
 | FR Codes | Context | Details
 
-.1+| *FR-LMS-15*
+.5+| *FR-LMS-15*
 | *Description*
 a|
 Provide an ergonomic human interface with intuitive navigation, role-based dashboards, and responsive UI experience.
@@ -24,7 +24,7 @@ a|
    * User profile database storing layout, theme, and accessibility preferences.  
    * Audit logs for UI interaction analytics and usability improvement.
 
-// image::assets/lms_ui_architecture.png[LMS UI Architecture, 400, align="center"]
+image::assets/lms_ui_ux_arch.png[LMS UI Architecture, 400, align="center"]
 
 | *Data Flow*
 a|
@@ -32,7 +32,7 @@ a|
 2. **UI Rendering:** Middleware retrieves user preferences → interface generated accordingly.  
 3. **Interaction Logging:** UI actions recorded in audit logs for usability and performance insights.
 
-// image::assets/lms_ui_dataflow.png[LMS UI Data Flow, 300, align="center"]
+image::assets/lms_ui_ux_seq.png[LMS UI Data Flow, 300, align="center"]
 
 | *Implementation Methodology*
 a|
