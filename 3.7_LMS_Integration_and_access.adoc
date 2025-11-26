@@ -34,7 +34,7 @@ a|
    * CTMR repository with versioning and inheritance logic.  
    * Deployment configuration manager for environment-specific control.
 
-// image::assets/lms_arch.png[LMS Architecture, 400, align="center"]
+image::assets/lms_integration_arch.png[LMS Architecture, 400, align="center"]
 
 | *Data Flow*
 a|
@@ -43,10 +43,14 @@ a|
 3. Authorization logic determines whether the user is routed to **Full LMS** or **CTMR-only** view.  
 4. CTMR repository delivers content with version inheritance for operational deployment.  
 
-// image::assets/lms_flow.png[LMS Data Flow, 300, align="center"]
+image::assets/lms_integration_seq.png[LMS Data Flow, 300, align="center"]
 
 | *Implementation Methodology*
 a|
 * **Phase 1 – Integration Setup:** Embed LMS entry point within IETM console and enable co-hosted access.  
 * **Phase 2 – Authentication & Credential Management:** Implement permanent and temporary credential workflows.  
-* **Phase 3 – Deployment*
+* **Phase 3 – Deployment Configuration:** Set up dual-mode deployment logic (Full LMS vs. CTMR-only).  
+* **Phase 4 – CTMR Repository Integration:** Link LMS with CTMR versioning system.  
+* **Phase 5 – Testing & Validation:** Validate role-based access, credential expiry, and deployment modes.
+
+|===
