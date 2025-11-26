@@ -1,0 +1,52 @@
+== LMS – Integration & Access
+
+[cols="1,3,4", options="header"]
+|===
+| FR Codes | Context | Details
+
+.5+| *FR-LMS-01* +
+*FR-LMS-12* +
+*FR-LMS-13* +
+*FR-LMS-16* +
+*FR-LMS-17*
+| *Description*
+a|
+1. LMS accessible via icon/link embedded in the IETM console, co-hosted on the same server.  
+2. Trainees access LMS via administrator-assigned credentials.  
+3. Temporary credentials for program-specific access to training content.  
+4. Deployment modes: **Full LMS** at training centers & **CTMR-only access** at operational units.  
+5. Supports role-based dashboards and user-level content restrictions.
+
+| *Architectural Design*
+a|
+1. **Front End Layer:**  
+   * LMS icon/link integrated into IETM UI.  
+   * Login page accessible for trainees and trainers.  
+   * Role-based dashboard based on user profile.  
+
+2. **Middleware Layer:**  
+   * Authentication & session management.  
+   * Access control based on deployment configuration.  
+   * Credential issuance, renewal, and validation service.  
+
+3. **Back End Layer:**  
+   * PostgreSQL user database storing permanent & temporary credentials.  
+   * CTMR repository with versioning and inheritance logic.  
+   * Deployment configuration manager for environment-specific control.
+
+// image::assets/lms_arch.png[LMS Architecture, 400, align="center"]
+
+| *Data Flow*
+a|
+1. User selects the **LMS icon/link** from the IETM console.  
+2. Middleware validates credentials using authentication module.  
+3. Authorization logic determines whether the user is routed to **Full LMS** or **CTMR-only** view.  
+4. CTMR repository delivers content with version inheritance for operational deployment.  
+
+// image::assets/lms_flow.png[LMS Data Flow, 300, align="center"]
+
+| *Implementation Methodology*
+a|
+* **Phase 1 – Integration Setup:** Embed LMS entry point within IETM console and enable co-hosted access.  
+* **Phase 2 – Authentication & Credential Management:** Implement permanent and temporary credential workflows.  
+* **Phase 3 – Deployment*
