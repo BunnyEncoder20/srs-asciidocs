@@ -1,0 +1,40 @@
+== Authoring & Standards Compliance
+[cols="2,2,6", options="header"]
+|===
+| FR Codes | Section / Title | Description
+
+| FR-IETM-01 +
+FR-IETM-02 +
+FR-IETM-11 +
+FR-IETM-17
+| Authoring & Standards Compliance
+| 1. Author IETM content using S1000D Issue 4.2 standards. +
+ 2. Structure content into Data Modules (DMs), ICNs, and Publication Modules. +
+ 3. Integrate illustrations and multimedia as per S1000D specifications. +
+ 4. Publish IETM Level 4 with interactive features (search, navigation, filtering). +
+ 5. Deliver content via a web-based layered architecture.
+
+| 
+| Architectural Design
+| 1. Layered Architecture: +
+ * Front End: User interface for accessing IETM content. +
+ * Middleware: Business logic, content rendering, and API orchestration. +
+ * Back End: Data storage, content management, and authoring tools.
+
+| 
+| Architecture Diagram
+| Diagram to be inserted
+
+| 
+| Data Flow
+| 1. Authoring: Authors create Data Modules (DM), SMEs review DMs. +
+ 2. Storage: DMs stored in a CSDB. +
+ 3. Publishing: Middleware transforms XML to web-friendly formats. +
+ 4. Delivery: Front end renders content interactively.
+
+| 
+| Implementation Methodology
+| Deployment Approach: +
+ * Platform: Client-Server +
+ * Containerization: Docker/Kubernetes
+|===
