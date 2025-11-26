@@ -1,4 +1,4 @@
-== 1.4 STAKEHOLDERS AND CONCERNS
+== STAKEHOLDERS AND CONCERNS
 
 1. HQ/HOD, CO/Unit Admin, Users (operator, maintainer), Trainers, Trainee: 
    Hierarchical two-factor approvals, enforceable RBAC, and auditable access paths 

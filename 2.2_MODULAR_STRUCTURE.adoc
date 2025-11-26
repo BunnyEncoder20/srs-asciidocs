@@ -1,13 +1,13 @@
-== 2.2 MODULAR SYSTEM STRUCTURE
+== MODULAR SYSTEM STRUCTURE
 
-=== 2.2.1 Architectural Design Pattern
+=== Architectural Design Pattern
 The system utilizes a **Modular Architecture**, leveraging the **NestJS** framework on the server side. This design enforces a strict separation of concerns, where each functional domain is encapsulated within its own discrete module. This ensures:
 
 * **Loose Coupling:** Dependencies between modules are minimized and managed via strict interfaces.
 * **Scalability:** Individual modules (e.g., Media Processing) can be optimized or scaled independently based on load.
 * **Maintainability:** Updates to specific logic (e.g., changing the Search algorithm) do not impact the core IETM Engine.
 
-=== 2.2.2 Core Functional Modules
+=== Core Functional Modules
 The application logic is segregated into the following distinct functional units:
 
 [horizontal]
