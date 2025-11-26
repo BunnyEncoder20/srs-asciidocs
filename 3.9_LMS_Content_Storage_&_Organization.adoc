@@ -4,7 +4,7 @@
 |===
 | FR Codes | Context | Details
 
-.3+| *FR-LMS-05* +
+.5+| *FR-LMS-05* +
 *FR-LMS-07* +
 *FR-LMS-14*
 | *Description*
@@ -30,7 +30,7 @@ a|
    * Metadata indexer database tracking ownership and classification.  
    * Audit logger for event tracking (changes, deletions, access activity).
 
-// image::assets/lms_ctmr_architecture.png[LMS CTMR Architecture, 400, align="center"]
+image::assets/lms_content_storage_arch.png[LMS CTMR Architecture, 400, align="center"]
 
 | *Data Flow*
 a|
@@ -39,7 +39,7 @@ a|
 3. CTMR stores content with version indexing and access permissions.  
 4. Role-based view allows controlled access; admin may modify or delete entries via governance console.  
 
-// image::assets/lms_ctmr_dataflow.png[LMS CTMR Data Flow, 300, align="center"]
+image::assets/lms_content_storage_seq.png[LMS CTMR Data Flow, 300, align="center"]
 
 | *Implementation Methodology*
 a|
