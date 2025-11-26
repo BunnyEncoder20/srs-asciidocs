@@ -1,40 +1,47 @@
 == Authoring & Standards Compliance
-[cols="2,2,6", options="header"]
+
+[cols="1,3,4", options="header"]
 |===
-| FR Codes | Section / Title | Description
+| FR Codes | Context | Details
 
-| FR-IETM-01 +
-FR-IETM-02 +
-FR-IETM-11 +
-FR-IETM-17
-| Authoring & Standards Compliance
-| 1. Author IETM content using S1000D Issue 4.2 standards. +
- 2. Structure content into Data Modules (DMs), ICNs, and Publication Modules. +
- 3. Integrate illustrations and multimedia as per S1000D specifications. +
- 4. Publish IETM Level 4 with interactive features (search, navigation, filtering). +
- 5. Deliver content via a web-based layered architecture.
+.4+| *FR-IETM-01* +
+*FR-IETM-02* +
+*FR-IETM-11* +
+*FR-IETM-17*
+| *Description*
+a|
+1. Author IETM content using **S1000D Issue 4.2** standards.
+2. Structure content into Data Modules (DMs), ICNs, and Publication Modules.
+3. Integrate illustrations and multimedia as per S1000D specifications.
+4. Publish IETM Level 4 with interactive features (search, navigation).
+5. Deliver content via a web-based layered architecture.
 
-| 
-| Architectural Design
-| 1. Layered Architecture: +
- * Front End: User interface for accessing IETM content. +
- * Middleware: Business logic, content rendering, and API orchestration. +
- * Back End: Data storage, content management, and authoring tools.
+| *Architectural Design*
+a|
+The module follows a strict 3-tier structure to separate content creation from storage:
 
-| 
-| Architecture Diagram
-| Diagram to be inserted
+1. **Front End:** Web-based XML Editor with real-time schema validation.
+2. **Middleware:** NestJS services for BREX validation and Transformation logic.
+3. **Back End:** CSDB (Common Source Data Base) storing raw XML and ICNs.
 
-| 
-| Data Flow
-| 1. Authoring: Authors create Data Modules (DM), SMEs review DMs. +
- 2. Storage: DMs stored in a CSDB. +
- 3. Publishing: Middleware transforms XML to web-friendly formats. +
- 4. Delivery: Front end renders content interactively.
+// Insert the Cloud Arch image here
+image::assets/authoring_architecture.png[Authoring Architecture, 400, align="center"]
 
-| 
-| Implementation Methodology
-| Deployment Approach: +
- * Platform: Client-Server +
- * Containerization: Docker/Kubernetes
+| *Data Flow*
+a|
+The lifecycle of a Data Module from creation to delivery:
+
+1. **Authoring:** Authors create DMs; system validates against Schema/BREX.
+2. **Storage:** Approved DMs are version-controlled in the CSDB.
+3. **Publishing:** Middleware transforms XML to web-friendly JSON/HTML.
+4. **Delivery:** Frontend renders the interactive content.
+
+// Insert the Flowchart image here
+image::assets/authoring_dataflow.png[Authoring Data Flow, 300, align="center"]
+
+| *Implementation Methodology*
+a|
+* **Platform:** Client-Server (NestJS + React)
+* **Containerization:** Dockerized services managed via Kubernetes.
+* **Standard:** S1000D Issue 4.2 / ASD-STE-100.
 |===
