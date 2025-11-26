@@ -1,0 +1,52 @@
+== LMS – Content Storage & Organization
+
+[cols="1,3,4", options="header"]
+|===
+| FR Codes | Context | Details
+
+.3+| *FR-LMS-05* +
+*FR-LMS-07* +
+*FR-LMS-14*
+| *Description*
+a|
+1. Store curated and prepared training material inside **CTMR** under trainer credentials.  
+2. Organize content modularly by **system/subsystem**, with controlled access.  
+3. Enable admin governance for modifying or deleting training materials stored in repository.
+
+| *Architectural Design*
+a|
+1. **Front End Layer:**  
+   * Repository browser providing folder hierarchy navigation.  
+   * Upload, organize, and manage training content modules.  
+   * Role-based visibility for trainers and admins.  
+
+2. **Middleware Layer:**  
+   * Business logic for content indexing, access enforcement, and versioning.  
+   * Modular classification engine for system/subsystem tagging.  
+   * Governance functions (delete/modify/audit) for authorized admin roles.  
+
+3. **Back End Layer:**  
+   * CTMR repository for structured storage of curated materials.  
+   * Metadata indexer database tracking ownership and classification.  
+   * Audit logger for event tracking (changes, deletions, access activity).
+
+// image::assets/lms_ctmr_architecture.png[LMS CTMR Architecture, 400, align="center"]
+
+| *Data Flow*
+a|
+1. Trainer uploads curated training content to CTMR via repository manager UI.  
+2. Middleware validates file, assigns metadata, and applies system/subsystem tags.  
+3. CTMR stores content with version indexing and access permissions.  
+4. Role-based view allows controlled access; admin may modify or delete entries via governance console.  
+
+// image::assets/lms_ctmr_dataflow.png[LMS CTMR Data Flow, 300, align="center"]
+
+| *Implementation Methodology*
+a|
+* **Phase 1 – CTMR Repository Setup:** Implement structured storage model and metadata schema.  
+* **Phase 2 – Repository UI:** Develop file manager–style interface with upload and hierarchy features.  
+* **Phase 3 – Access Control:** Apply RBAC-based visibility and edit/delete permissions.  
+* **Phase 4 – Modular Tagging:** Add system/subsystem classification and search indexing.  
+* **Phase 5 – Audit & Governance:** Enable version tracking, change logs, and admin controls.
+
+|===
