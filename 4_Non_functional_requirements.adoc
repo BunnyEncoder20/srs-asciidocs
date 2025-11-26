@@ -1,0 +1,103 @@
+= Non-Functional Requirements (NFR) and Implementation Strategy
+
+[cols="1,3,3", options="header"]
+|===
+| Category | Requirements | Implementation Strategy
+
+| **Performance**
+| * UI screens shall load and render within 1–2 seconds for standard operations (navigation, open DM, open CTMR content).  
+* Search operations (full-text / contextual) shall return results within 10–15 seconds for typical queries.  
+* 2D/3D animations and multimedia playback shall run smoothly without noticeable lag on supported hardware.  
+* System shall support concurrent access for multiple trainees, trainers, and maintainers across deployments.
+| * Use efficient frontend rendering with React.js, virtual DOM, lazy loading, and code splitting for heavy views.  
+* Optimize database queries and establish proper indexing for frequently accessed tables (DMs, CTMR, users, logs).  
+* Use ElasticSearch (or equivalent) for search indexing and tune shards/replicas for query performance.  
+* Cache static assets (images, models, scripts) and enable HTTP compression.  
+* Conduct load testing and performance tuning for representative user loads and content volumes.
+
+| **Reliability & Availability**
+| * System shall operate fully offline at unit/ship level with no dependency on internet connectivity.  
+* IETM and LMS services shall provide high availability (≥ 99% at training centers).  
+* Critical services (auth, content delivery, CTMR, search) shall recover gracefully after restart or failure.
+| * Deploy services in a containerized environment (Docker/Kubernetes) with health checks and restart policies.  
+* Use local application and DB servers at each deployment site with backup & restore procedures.  
+* Implement service-level monitoring (CPU, memory, response times) and alerting.  
+* Schedule periodic backup of CSDB, CTMR, and user data; test restoration procedures regularly.
+
+| **Scalability**
+| * Support growing volume of manuals, training programs, and multimedia assets (2D/3D).  
+* Scale horizontally to support additional training centers and operational units.  
+* Search index, CTMR repository, and LMS modules must scale with increasing content and users.
+| * Use modular microservice-style architecture for content, search, CTMR, LMS, and auth services.  
+* Design database schema to support partitioning/sharding where necessary (per system/unit).  
+* Use container orchestration (Kubernetes) to add replicas of stateless services as load increases.  
+* Plan content archiving policies and separate hot/warm/cold data storage tiers.
+
+| **Security**
+| * Implement secure login with encrypted credential storage and role-based access control (RBAC).  
+* Restrict content visibility, print/export rights, and LMS access based on roles and deployment mode.  
+* Maintain audit logs for login, content access, print/export actions, and administrative operations.  
+* Protect sensitive training and IETM content through watermarking and screenshot deterrence mechanisms.
+| * Store passwords using strong one-way hashing (e.g., bcrypt/Argon2) and enforce password policies.  
+* Implement RBAC at API and UI layer, mapping user roles to content categories and operations.  
+* Use TLS/secure channels for all intra-network communications where applicable.  
+* Implement centralized logging of security events and provide reporting views for security officers.  
+* Add watermark overlays to sensitive pages and intercept known print/screenshot shortcuts where feasible.
+
+| **Usability & Accessibility**
+| * Provide ergonomic UI aligned with ISO/TR 9241-100 principles (clarity, low cognitive load, consistency).  
+* Comply with WCAG 2.1 requirements: keyboard access, contrast, text scaling, screen-reader support.  
+* UI should require minimal training for trainees, trainers, and maintainers.  
+* Support personalization (theme, font size, layout preferences).
+| * Establish UX design guidelines and reusable React component library following accessibility best practices.  
+* Implement ARIA roles, focus management, skip-to-content links, and keyboard navigation for all key workflows.  
+* Conduct usability tests with representative users (trainee, trainer, maintainer) and refine flows.  
+* Implement user preferences storage in DB and apply them at login (theme, font, language).  
+* Use clear visual hierarchy, breadcrumb navigation, and contextual help/tooltips.
+
+| **Maintainability**
+| * System components (IETM, LMS, CTMR, search, 3D viewer) shall be modular and loosely coupled.  
+* Updates to content, UI, or backend services shall not require full system downtime.  
+* Configuration for deployments (modes, roles, CTMR hierarchy) shall be centrally managed.  
+* Search index, chatbot knowledge base, and training content shall be easy to update.
+| * Use layered and modular architecture with well-defined service boundaries and APIs.  
+* Implement CI/CD pipelines for safe rollouts, with rollback capability.  
+* Externalize configuration (environment variables/config files) per environment (training center, unit).  
+* Implement admin consoles for managing roles, content, and configuration.  
+* Provide scripts/utilities for incremental re-indexing of search and updating chatbot content.
+
+| **Portability**
+| * CTMR packages shall be portable and deployable across unit/ship servers.  
+* System shall support operation on a variety of hardware configurations (desktop, tablet, rugged handhelds).  
+* LMS and IETM shall be deployable on different on-premise environments without major code changes.
+| * Package CTMR and application services as Docker containers and/or portable deployment bundles.  
+* Use standards-based technologies (HTML5, CSS3, JS, React, Node.js, PostgreSQL) to avoid vendor lock-in.  
+* Provide deployment scripts and documentation for different on-prem infrastructures.  
+* Support responsive design and adaptive layouts for different form factors.
+
+| **Auditability**
+| * All critical actions (login, logout, content access, print/export, admin changes, LMS assignments) shall be logged.  
+* Audit history must support filtering and export for reporting and compliance checks.  
+* Version history of CTMR and key content must be traceable.
+| * Implement centralized audit logging service with structured log format (user, timestamp, action, object).  
+* Store logs in dedicated tables with indexing for reporting; provide admin UI for search/export.  
+* Integrate version control metadata into CTMR repository and IETM content operations.  
+* Define log retention and archival policies as per customer security requirements.
+
+| **Data Integrity & Consistency**
+| * Ensure correctness of IETM DMs, CTMR content, training mappings, and LMS records.  
+* Maintain versioning and parent-child inheritance for CTMR and training content updates.  
+* Prevent partial or inconsistent updates during imports, publishing, or deployment sync.
+| * Use database transactions for multi-step operations (imports, CTMR updates, assignments).  
+* Implement validation rules at middleware level for content format, metadata, and references.  
+* Apply referential integrity constraints in database schema.  
+* Define and implement content lifecycle (draft, review, approved, published) with approvals.
+
+| **Availability & Recovery**
+| * System shall support restoration of operations following hardware/software failures with minimal data loss.  
+* Local deployments at units/training centers should be able to recover from backup images.
+| * Schedule regular database and repository backups; store in secure on-prem backup locations.  
+* Test restoration and failover procedures periodically (DR drills).  
+* Use redundant storage or RAID at server level where applicable.  
+
+|===
