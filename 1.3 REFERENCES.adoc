@@ -1,0 +1,16 @@
+== REFERENCES
+
+1. ISO/IEC/IEEE 29148:2018, Systems and software engineering — Requirements 
+   engineering (SRS/SyRS structure and traceability).
+
+2. IEEE 1016, Software Design Description (SDD/SDS) for design views and content 
+   organization.
+
+3. S1000D Issue 4.2, International specification for technical publications (IETM Level 4).
+
+4. ASD-STE-100, Simplified Technical English (controlled language for documentation).
+
+5. ISO/TR 9241-100:2023, Ergonomics of human-system interaction — Overview of 
+   software ergonomics.
+
+6. PGAD RFP PGAD/439/DN-B1/25-26/0002, Scope of Work and acceptance requirements.

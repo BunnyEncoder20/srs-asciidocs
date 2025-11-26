@@ -1,0 +1,12 @@
+== SCOPE
+
+1. The scope of this Software Design Document includes both the architectural and detailed 
+   design of the Interactive Electronic Technical Manual (IETM) Level 4 system and the 
+   co-hosted Learning Management System (LMS).
+
+2. The document outlines all essential elements of the design, including system components, 
+   interfaces, data flows, and key design decisions.
+
+3. The design addresses both:
+   * Functional requirements: System features and workflows
+   * Non-functional requirements: Usability, security, and maintainability

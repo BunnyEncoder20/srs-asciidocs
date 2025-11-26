@@ -1,0 +1,39 @@
+== 2.1 SYSTEM ARCHITECTURE
+
+// Define the images directory (optional, but cleaner)
+:imagesdir: assets
+
+=== 2.1.1 Logical Architecture
+The system follows a standard Multi-Tiered Architecture, ensuring separation of concerns between presentation, business logic, and data storage.
+
+. **Presentation Layer (Frontend)**
+* **Interface:** Fully browser-based interface compatible with standard Windows browsers.
+* **Access Points:** Accessed via Thin Clients or Desktop workstations.
+
+. **Application Layer (Middleware)**
+* Acts as the central processing unit, handling:
+** **Core Services:** Navigation, Search Engine, and Media Streaming.
+** **Security:** Role-Based Access Control (RBAC) and Audit Logging.
+** **Modules:** Chatbot assistance and IETM/LMS business logic.
+
+. **Data Layer (Backend Repositories)**
+* Persistent storage for critical system data:
+** **S1000D Data Modules:** Technical documentation and XML content.
+** **Operational Data:** CTMR (Computerized Technical Maintenance Record), User Notes, and Counters.
+** **System Logs:** Audit trails and error logs.
+
+// INSERT DIAGRAM HERE
+.High-Level System Architecture
+image::ietm_architecture.png[System Architecture HLD Diagram, 600, align="center"]
+// Note: If you didn't use :imagesdir: at the top, use: image::assets/ietm_architecture.png[...]
+
+=== 2.1.2 Deployment Architecture
+The system is designed for secure, on-premises deployment within air-gapped PGAD networks.
+
+* **Server Infrastructure:**
+** **Main Server:** Hosts the central IETM/LMS application and master database.
+** **Training Center Server:** Dedicated instance for LMS training modules.
+* **Edge Nodes:**
+** **Unit CTMR Nodes:** Localized nodes for maintenance record synchronization.
+* **Offline Capabilities:**
+** Supports generation of offline IETM Level 3 export packages for field usage.

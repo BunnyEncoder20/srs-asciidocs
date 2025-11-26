@@ -1,0 +1,14 @@
+== 1.4 STAKEHOLDERS AND CONCERNS
+
+1. HQ/HOD, CO/Unit Admin, Users (operator, maintainer), Trainers, Trainee: 
+   Hierarchical two-factor approvals, enforceable RBAC, and auditable access paths 
+   across system/subsystem scopes.
+
+   a. Operators, Maintainers: Access to relevant manuals, full-feature navigation, 
+      search, and support.
+
+   b. Trainers, Trainees: Training content, test creation/execution, analytics, and 
+      a seamless user experience.
+
+2. Audit, Security: End-to-end traceability of approvals, events, offline operation, 
+   and compliance logging.
