@@ -28,6 +28,8 @@ The User Interface is built using a component-driven architecture with accessibi
 4. **Security & UX Control:** Screenshot restriction via event hooks and watermark overlays.
 5. **Backend Integration:** REST APIs for content, search, permissions, and export processing.
 
+image::assets/ui_ergo_architecture.png[User Interface & Ergonomics Architecture, 400, align="center"]
+
 // image::assets/ui_architecture.png[UI Architecture, 400, align="center"]
 
 | *Data Flow*
@@ -37,7 +39,8 @@ a|
 3. Backend returns data (DM content, search results, export PDF file).
 4. UI applies ergonomic & accessibility settings before rendering to user.
 5. For PDF export → UI sends request → backend generates PDF with watermark → returns file → print/download.
-// image::assets/ui_dataflow.png[UI Data Flow, 300, align="center"]
+
+image::assets/ui_ergo_seq.png[UI Sequence Diagram, 300, align="center"]
 
 | *Implementation Methodology*
 a|

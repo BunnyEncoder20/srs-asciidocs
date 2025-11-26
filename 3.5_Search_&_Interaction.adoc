@@ -4,7 +4,7 @@
 |===
 | FR Codes | Context | Details
 
-.2+| *FR-IETM-16* +
+.5+| *FR-IETM-16* +
 *FR-IETM-21*
 | *Description*
 a|
@@ -21,7 +21,7 @@ A scalable and high-performance search architecture combining indexing services 
 4. **Frontend UI:** Unified search interface with filter panel, result preview, and chatbot window with intelligent responses.  
 5. **Backend Services:** Query parser, sanitization, ranking engine, and search analytics.
 
-// image::assets/search_architecture.png[Search Architecture, 400, align="center"]
+image::assets/search_interaction_arch.png[Search Architecture, 400, align="center"]
 
 | *Data Flow*
 a|
@@ -32,7 +32,7 @@ a|
 5. Results displayed → user may refine search or view history/saved queries.  
 6. Chatbot may provide guided prompts and auto-suggest alternate queries based on context.  
 
-// image::assets/search_dataflow.png[Search Data Flow, 300, align="center"]
+image::assets/search_interaction_seq.png[Search Data Flow, 300, align="center"]
 
 | *Implementation Methodology*
 a|

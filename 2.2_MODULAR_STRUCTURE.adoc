@@ -35,4 +35,4 @@ Media Processing Unit::
 AI Support Assistant (Chatbot)::
   An intelligent interface layer that processes natural language queries to assist users in locating specific maintenance procedures or troubleshooting guides.
 
-image::assets/modular-design.png[Modular System Structure Diagram, 600, align="center"]
+image::assets/modular_design.png[Modular System Structure Diagram, 600, align="center"]

@@ -19,6 +19,8 @@ a|
 4. **Authentication Integration:** Notes tied to login and visible only to individual user sessions.  
 5. **REST APIs:** Create, update, delete, retrieve notes operations.
 
+image::assets/ux_runtime_arch.png[User Interactiona dn Runtime Features Architecture, 400, align="center"]
+
 | *Data Flow*
 a|
 1. User logs in and opens a Data Module/illustration.  
@@ -26,6 +28,8 @@ a|
 3. Client sends an API request with user ID + DM reference + note content.  
 4. Backend stores note securely and associates it with the authenticated user.  
 5. When user revisits content, notes are retrieved and displayed automatically.
+
+image::assets/ux_runtime_seq.png[User Interactiona dn Runtime Features Sequence Diagram, 400, align="center"]
 
 | *Implementation Methodology*
 a|

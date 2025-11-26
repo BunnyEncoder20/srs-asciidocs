@@ -27,7 +27,7 @@ The visualization architecture integrates multi-format rendering and interactive
 4. **Back-End Layer:** Repository for structured XML (DM/PM), multimedia, metadata indexing, CAD-derived 3D models.
 5. **Playback & Synchronization Engine:** Coordinates voice/text alignment and interactive learning models.
 
-// image::assets/visualization_architecture.png[Visualization Architecture, 400, align="center"]
+image::assets/content_visualization_arch.png[Visualization Architecture, 400, align="center"]
 
 | *Data Flow*
 a|
@@ -38,7 +38,7 @@ a|
 5. Frontend renders 2D/3D views and interactive controls (hotspots, rotate, zoom, play/pause).
 6. User interacts (zoom, rotate, explode, step-through); changes reflected in real-time rendering.
 
-// image::assets/visualization_dataflow.png[Visualization Data Flow, 300, align="center"]
+image::assets/content_visualization_seq.png[Visualization Data Flow, 300, align="center"]
 
 | *Implementation Methodology*
 a|
