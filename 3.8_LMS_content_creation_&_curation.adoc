@@ -35,7 +35,7 @@ a|
    * Version control for curated and supplier-developed content.  
    * Secured repository access for external materials.
 
-// image::assets/lms_content_architecture.png[LMS Content Architecture, 400, align="center"]
+image::assets/lms_content_arch.png[LMS Content Architecture, 400, align="center"]
 
 | *Data Flow*
 a|
@@ -45,7 +45,7 @@ a|
 4. Content stored in repository with versioning and role-based access attributes.  
 5. Trainers assign curated content to courses, modules, and training programs.  
 
-// image::assets/lms_content_dataflow.png[LMS Content Data Flow, 300, align="center"]
+image::assets/lms_content_seq.png[LMS Content Data Flow, 300, align="center"]
 
 | *Implementation Methodology*
 a|
